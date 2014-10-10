@@ -1,6 +1,6 @@
 #include "delegate.h"
 
-delegate(void, th, (int i), (i));
+delegate_m(void, th, int);
 
 void Call(th delegate_method)
 {
