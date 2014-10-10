@@ -13,11 +13,11 @@ How to use
 
 2.Declare function prototype
 
-delegate(return-value-type,delegate-name,(Formal parameters),(The actual parameters);
+delegate_m(return-value-type,delegate-name,Formal parameters type);
 
 e.g.
 
-delegate(void, th, (int i), (i));
+delegate(void, th, int);
 
 
 3.To instantiate delegate
@@ -44,4 +44,3 @@ delegate-instant(The actual parameters);
 e.g.
 
 delegate_0(123);
-
