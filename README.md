@@ -20,7 +20,7 @@ e.g.
 delegate(void, th, int);
 
 
-3.To instantiate delegate
+3.To instantiate delegate (function, member method and lambda)
 
 delegate-name delegate-instant(&class-name, &member-function-name);
 
@@ -35,6 +35,10 @@ th delegate_0(&t, &A::p);
 or
 
 th delegate_0(&disp);
+
+or
+
+th delegate_0([](int v){});
 
 
 4.Call
