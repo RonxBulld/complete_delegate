@@ -27,5 +27,10 @@ int main()
 	Call(&p);
 	Call({&t, &A::p});
 	delegate_0(789);
+	th delegate_1([](int v)
+	{
+		cout << "[lambda]delegate print:" << v << endl;
+	});
+	delegate_1(654);
 	return 0;
 }
