@@ -42,6 +42,11 @@ public:
 	{
 		delegate_ptr = new delegate_struct<_tmp>(*p.delegate_ptr);
 	}
+	delegate& operator=(const delegate &p)
+	{
+		delegate_ptr = new delegate_struct<_tmp>(*p.delegate_ptr);
+		return *this;
+	}
 	ret operator()(paras ... args)
 	{
 		return this->Invoke(args ...);
