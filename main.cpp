@@ -3,6 +3,7 @@ using namespace std;
 #include "delegate.h"
 
 delegate_m(void, th, int);
+delegate_m(bool, Event, void);
 extern void Call(th delegate_method);
 
 class A
@@ -38,5 +39,6 @@ int main()
 		cout << "[lambda2]delegate print:" << v << endl;
 	};
 	Call(delegate_0);
+	Event e = [](void)->bool{return true;};
 	return 0;
 }
