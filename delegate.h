@@ -89,7 +89,8 @@ private:
 	};
 	delegate_struct<_tmp> *delegate_ptr;
 public:
-	delegate(ret (*Func)(void))
+	template<typename FuncType>
+	delegate(FuncType Func)
 	{
 		this->delegate_ptr = new delegate_struct<_tmp>(Func);
 	}
@@ -102,7 +103,7 @@ public:
 	{
 		delegate_ptr = new delegate_struct<_tmp>(*p.delegate_ptr);
 	}
-	ret operator()(void)
+	ret operator()()
 	{
 		return this->Invoke();
 	}
