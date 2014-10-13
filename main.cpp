@@ -24,13 +24,19 @@ int main()
 	A t;
 	th delegate_0(&t, &A::p);
 	Call(delegate_0);
+	delegate_0 = &p;
+	delegate_0(7890);
 	Call(&p);
 	Call({&t, &A::p});
 	delegate_0(789);
-	th delegate_1([](int v)
+	Call([](int v)
 	{
 		cout << "[lambda]delegate print:" << v << endl;
 	});
-	delegate_1(654);
+	delegate_0 = [](int v)
+	{
+		cout << "[lambda2]delegate print:" << v << endl;
+	};
+	Call(delegate_0);
 	return 0;
 }
