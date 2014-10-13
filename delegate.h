@@ -29,7 +29,8 @@ private:
 	};
 	delegate_struct<_tmp> *delegate_ptr;
 public:
-	delegate(ret (*Func)(paras ...))
+	template<typename FuncType>
+	delegate(FuncType Func)
 	{
 		this->delegate_ptr = new delegate_struct<_tmp>(Func);
 	}
